@@ -1,37 +1,36 @@
 # Personalized Networking Assistant
 
-## Description
+## Project Description
 An AI-powered application that helps users generate personalized networking conversation starters based on their skills, interests, and career goals.
 
 ## Features
-- AI-generated networking messages
-- Conversation history tracking
-- Feedback collection
-- Wikipedia fact checking
-- FastAPI backend
-- Streamlit frontend
+- Profile Analysis
+- Career Recommendations
+- Personalized Conversation Generation
+- Fact Checking using Wikipedia
+- Conversation History
+- Feedback System
+- FastAPI Backend
+- Streamlit Frontend
 
 ## Technologies Used
 - Python
 - FastAPI
 - Streamlit
+- Pydantic
 - Wikipedia API
 - JSON Storage
 - Git & GitHub
 
-## Run the Project
-
-### Install dependencies
-pip install -r requirements.txt
-
-### Start FastAPI
+## Run Backend
+```bash
 uvicorn main:app --reload
+```
 
-### Start Streamlit
+## Run Frontend
+```bash
 streamlit run app.py
+```
 
 ## API Documentation
 http://127.0.0.1:8000/docs
-
-## Streamlit App
-http://localhost:8501

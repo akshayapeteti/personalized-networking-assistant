@@ -13,7 +13,45 @@ class UserProfile(BaseModel):
     interests: list[str]
     career_goals: str
 
+@app.post("/analyze-profile")
+def analyze_profile(profile: UserProfile):
+    return {
+        "name": profile.name,
+        "skills": profile.skills,
+        "interests": profile.interests,
+        "career_goal": profile.career_goals,
+        "analysis":
+        f"{profile.name} has strong skills in "
+        f"{', '.join(profile.skills)} and is interested in "
+        f"{', '.join(profile.interests)}."
+    }
+@app.post("/generate-recommendations")
+def generate_recommendations(profile: UserProfile):
+    recommendations = []
 
+    if "Python" in profile.skills:
+        recommendations.append(
+            "Build AI and automation projects."
+        )
+
+    if "Google Cloud" in profile.skills:
+        recommendations.append(
+            "Pursue Google Cloud certifications."
+        )
+
+    if "AI" in profile.interests:
+        recommendations.append(
+            "Participate in AI hackathons and networking events."
+        )
+
+    if len(recommendations) == 0:
+        recommendations.append(
+            "Continue improving technical and networking skills."
+        )
+
+    return {
+        "recommendations": recommendations
+    }
 @app.post("/generate-message")
 def generate_message(profile: UserProfile):
 
