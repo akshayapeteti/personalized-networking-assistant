@@ -1,6 +1,9 @@
 fastapi
 uvicorn
 streamlit
-wikipedia
-pydantic
+transformers
+torch
 requests
+wikipedia
+pytest
+httpx

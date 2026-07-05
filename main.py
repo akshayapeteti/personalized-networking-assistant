@@ -3,6 +3,8 @@ from pydantic import BaseModel
 import json
 from datetime import datetime
 from services.fact_checker import fact_check
+from event_analyzer import extract_event_themes
+from topic_generator import generate_topics
 
 app = FastAPI()
 
@@ -55,11 +57,18 @@ def generate_recommendations(profile: UserProfile):
 @app.post("/generate-message")
 def generate_message(profile: UserProfile):
 
-    message = (
-        f"Hi, I'm {profile.name}. "
-        f"I have skills in {', '.join(profile.skills)} "
-        f"and I'm interested in {', '.join(profile.interests)}. "
-        f"My career goal is {profile.career_goals}."
+    description = (
+        f"{profile.name} has skills in "
+        f"{', '.join(profile.skills)} "
+        f"and interests in "
+        f"{', '.join(profile.interests)}."
+    )
+
+    themes = extract_event_themes(description)
+
+    suggestions = generate_topics(
+        themes,
+        profile.interests
     )
 
     history = []
@@ -73,7 +82,8 @@ def generate_message(profile: UserProfile):
     history.append(
         {
             "name": profile.name,
-            "message": message,
+            "themes": themes,
+            "suggestions": suggestions,
             "time": str(datetime.now())
         }
     )
@@ -81,7 +91,10 @@ def generate_message(profile: UserProfile):
     with open("history.json", "w") as f:
         json.dump(history, f, indent=4)
 
-    return {"message": message}
+    return {
+        "themes": themes,
+        "suggestions": suggestions
+    }
 
 
 @app.get("/")
