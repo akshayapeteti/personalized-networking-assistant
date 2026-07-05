@@ -2,6 +2,7 @@ from fastapi import FastAPI
 from pydantic import BaseModel
 import json
 from datetime import datetime
+from services.fact_checker import fact_check
 
 app = FastAPI()
 
@@ -57,3 +58,37 @@ def get_history():
             return json.load(f)
     except:
         return []
+@app.get("/fact-check/{topic}")
+def check_fact(topic: str):
+    return {
+        "result": fact_check(topic)
+    }
+@app.post("/feedback")
+def save_feedback(
+    suggestion: str,
+    action: str
+):
+    try:
+        with open("feedback.json", "r") as f:
+            feedback = json.load(f)
+    except:
+        feedback = []
+
+    feedback.append(
+        {
+            "suggestion": suggestion,
+            "action": action,
+            "time": str(datetime.now())
+        }
+    )
+
+    with open("feedback.json", "w") as f:
+        json.dump(
+            feedback,
+            f,
+            indent=4
+        )
+
+    return {
+        "message": "Feedback saved"
+    }
