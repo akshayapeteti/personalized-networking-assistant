@@ -87,5 +87,19 @@
             "Generate 3 professional networking conversation starters:"
         ],
         "time": "2026-07-15 07:54:40.769342"
+    },
+    {
+        "name": "Akshaya",
+        "themes": [
+            "Artificial Intelligence",
+            "Machine Learning",
+            "Cloud Computing"
+        ],
+        "suggestions": [
+            "I am attending an event about Artificial Intelligence, Machine Learning, Cloud Computing.",
+            "My interests are AI, Machine Learning.",
+            "Generate 3 professional networking conversation starters:"
+        ],
+        "time": "2026-07-15 15:38:09.323972"
     }
 ]

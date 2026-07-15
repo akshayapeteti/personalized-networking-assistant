@@ -102,7 +102,7 @@ personalized-networking-assistant/
 ## 1. Clone Repository
 
 ```bash
-git clone https://github.com/YOUR_GITHUB_USERNAME/personalized-networking-assistant.git
+git clone https://github.com/akshayapeteti/personalized-networking-assistant.git
 
 cd personalized-networking-assistant
 ```
@@ -114,8 +114,6 @@ cd personalized-networking-assistant
 ```bash
 python -m venv .venv
 ```
-
-Activate Environment
 
 ### Windows
 
@@ -211,6 +209,16 @@ Example Output
 
 ![Source Code](images/code.png)
 
+---
+
+# 🎥 Project Demo Video
+
+📹 **Watch the complete demonstration here:**
+
+👉 **https://drive.google.com/file/d/10qq5iyRvMOK9mtanUdHdik4a2-m0lv1V/view?usp=drive_link**
+
+---
+
 # 🌟 Future Enhancements
 
 - 🤖 Gemini API Integration
@@ -234,10 +242,21 @@ Example Output
 
 ---
 
-## 🌟 Team Lead
+## ⭐ Team Lead
 
 ### Akshaya Peteti
+
 **Roll No:** AP24110011368
+
+**Responsibilities:**
+- Project Design
+- Backend Development
+- FastAPI Development
+- Streamlit UI Development
+- NLP Integration
+- GitHub Repository Management
+- Documentation
+- Project Demonstration
 
 **GitHub:** https://github.com/akshayapeteti
 
@@ -246,6 +265,7 @@ Example Output
 ## 👥 Team Members
 
 ### Maheswar Amara
+
 **Roll No:** AP24110010683
 
 **GitHub:** https://github.com/AP24110010683
@@ -253,6 +273,7 @@ Example Output
 ---
 
 ### I. Jayani
+
 **Roll No:** AP24110012035
 
 **GitHub:** https://github.com/jayani999
@@ -260,6 +281,7 @@ Example Output
 ---
 
 ### Meghana
+
 **Roll No:** AP24110011235
 
 **GitHub:** https://github.com/meghanakondaveeti-hub
