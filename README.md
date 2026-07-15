@@ -224,19 +224,45 @@ Example Output
 
 ---
 
-# 👩‍💻 Author
+# 👩‍💻 Project Team
 
 **Project:** Personalized Networking Assistant
 
 **Course:** Google Cloud Generative AI Internship
 
-**Institution:** Annamacharya Institute of Technology and Sciences (AITS), Kadapa
+**Institution:** SRM University-AP
 
-**Name:** Akshaya Peteti
+---
 
-**Department:** B.Tech CSE (AI & ML)
+## 🌟 Team Lead
+
+### Akshaya Peteti
+**Roll No:** AP24110011368
 
 **GitHub:** https://github.com/akshayapeteti
+
+---
+
+## 👥 Team Members
+
+### Maheswar Amara
+**Roll No:** AP24110010683
+
+**GitHub:** https://github.com/AP24110010683
+
+---
+
+### I. Jayani
+**Roll No:** AP24110012035
+
+**GitHub:** https://github.com/jayani999
+
+---
+
+### Meghana
+**Roll No:** AP24110011235
+
+**GitHub:** https://github.com/meghanakondaveeti-hub
 
 ---
 
