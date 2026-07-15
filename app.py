@@ -1,7 +1,8 @@
 import streamlit as st
 import requests
 
-st.title("Personalized Networking Assistant")
+st.title("🤝 Personalized Networking Assistant")
+
 st.markdown(
     """
     Welcome to the Personalized Networking Assistant.
@@ -17,6 +18,7 @@ skills = st.text_input("Skills (comma separated)")
 interests = st.text_input("Interests (comma separated)")
 career_goals = st.text_input("Career Goals")
 
+
 if st.button("Generate Networking Message"):
 
     data = {
@@ -31,65 +33,87 @@ if st.button("Generate Networking Message"):
         json=data
     )
 
-if response.status_code == 200:
 
-    result = response.json()
+    if response.status_code == 200:
 
-    st.success("AI Analysis Completed!")
+        result = response.json()
 
-    st.subheader("Detected Themes")
-    for theme in result["themes"]:
-        st.write("•", theme)
+        st.success("AI Analysis Completed!")
 
-    st.subheader("Networking Suggestions")
-    for i, suggestion in enumerate(result["suggestions"]):
+        st.subheader("Detected Themes")
 
-    st.write("•", suggestion)
+        for theme in result["themes"]:
+            st.write("•", theme)
 
-    col1, col2 = st.columns(2)
 
-    with col1:
-        if st.button("👍", key=f"like{i}"):
+        st.subheader("Networking Suggestions")
 
-            requests.post(
-                "http://127.0.0.1:8000/feedback",
-                params={
-                    "suggestion": suggestion,
-                    "action": "like"
-                }
-            )
 
-            st.success("Liked!")
+        for i, suggestion in enumerate(result["suggestions"]):
 
-    with col2:
-        if st.button("👎", key=f"dislike{i}"):
+            st.write("•", suggestion)
 
-            requests.post(
-                "http://127.0.0.1:8000/feedback",
-                params={
-                    "suggestion": suggestion,
-                    "action": "dislike"
-                }
-            )
+            col1, col2 = st.columns(2)
 
-            st.success("Disliked!")
 
-else:
-    st.error("Something went wrong!")
+            with col1:
+
+                if st.button("👍", key=f"like{i}"):
+
+                    requests.post(
+                        "http://127.0.0.1:8000/feedback",
+                        params={
+                            "suggestion": suggestion,
+                            "action": "like"
+                        }
+                    )
+
+                    st.success("Liked!")
+
+
+            with col2:
+
+                if st.button("👎", key=f"dislike{i}"):
+
+                    requests.post(
+                        "http://127.0.0.1:8000/feedback",
+                        params={
+                            "suggestion": suggestion,
+                            "action": "dislike"
+                        }
+                    )
+
+                    st.success("Disliked!")
+
+
+    else:
+
+        st.error("Something went wrong!")
+
+
+# History Section
+
 st.markdown("---")
+
 st.subheader("Conversation History")
 
+
 try:
+
     response = requests.get(
         "http://127.0.0.1:8000/history"
     )
 
     history = response.json()
 
+
     if len(history) == 0:
+
         st.write("No conversations yet.")
 
+
     else:
+
         for item in reversed(history):
 
             st.write("👤", item["name"])
@@ -97,5 +121,7 @@ try:
             st.caption(item["time"])
             st.markdown("---")
 
+
 except:
+
     st.write("Could not load history.")
