@@ -1,36 +1,245 @@
-# Personalized Networking Assistant
+# 🤝 Personalized Networking Assistant
 
-## Project Description
-An AI-powered application that helps users generate personalized networking conversation starters based on their skills, interests, and career goals.
+An AI-powered Personalized Networking Assistant that helps users prepare for professional networking events by analyzing event details, identifying key discussion topics, generating networking conversation starters, verifying facts, and managing conversation history.
 
-## Features
-- Profile Analysis
-- Career Recommendations
-- Personalized Conversation Generation
-- Fact Checking using Wikipedia
-- Conversation History
-- Feedback System
-- FastAPI Backend
-- Streamlit Frontend
+Built using **FastAPI**, **Streamlit**, **Natural Language Processing (NLP)**, and **Wikipedia API**.
 
-## Technologies Used
-- Python
-- FastAPI
-- Streamlit
-- Pydantic
-- Wikipedia API
-- JSON Storage
-- Git & GitHub
+---
 
-## Run Backend
+# 📌 Features
+
+- 🔍 Analyze professional profiles and networking events
+- 🧠 Detect important themes from event descriptions
+- 💬 Generate personalized networking conversation starters
+- 📚 Verify facts using Wikipedia API
+- 📝 Save networking conversation history
+- 👍👎 Collect user feedback on generated suggestions
+- 🎯 Generate AI-powered networking recommendations
+- 📄 Interactive API documentation using Swagger UI
+- 🧪 Unit testing using PyTest
+
+---
+
+# 🏗️ Project Architecture
+
+```
+                User
+                  │
+                  ▼
+        Streamlit Frontend
+                  │
+                  ▼
+          FastAPI Backend
+                  │
+        ┌─────────┼─────────┐
+        │         │         │
+        ▼         ▼         ▼
+ Profile     Event Analyzer  Fact Checker
+ Analyzer        │              │
+        │         ▼              ▼
+        │   Topic Generator  Wikipedia API
+        │
+        ▼
+ History Logger
+        │
+        ▼
+ Feedback Logger
+        │
+        ▼
+     JSON Storage
+```
+
+---
+
+# 📂 Project Structure
+
+```
+personalized-networking-assistant/
+│
+├── Documentation/
+│   ├── 1. Brainstorming & Ideation
+│   ├── 2. Requirement Analysis
+│   ├── 3. Project Design Phase
+│   ├── 4. Project Planning Phase
+│   ├── 5. Project Development Phase
+│   ├── 6. Project Testing
+│   ├── 7. Project Documentation
+│   └── 8. Project Demonstration
+│
+├── services/
+│   └── fact_checker.py
+│
+├── app.py
+├── main.py
+├── event_analyzer.py
+├── topic_generator.py
+├── history.json
+├── feedback.json
+├── test_main.py
+├── requirements.txt
+├── README.md
+└── .gitignore
+```
+
+---
+
+# ⚙️ Technologies Used
+
+| Technology | Purpose |
+|------------|----------|
+| FastAPI | Backend REST API |
+| Streamlit | Frontend User Interface |
+| Python | Programming Language |
+| Wikipedia API | Fact Verification |
+| JSON | Data Storage |
+| PyTest | Unit Testing |
+| Git & GitHub | Version Control |
+
+---
+
+# 🚀 Installation
+
+## 1. Clone Repository
+
+```bash
+git clone https://github.com/YOUR_GITHUB_USERNAME/personalized-networking-assistant.git
+
+cd personalized-networking-assistant
+```
+
+---
+
+## 2. Create Virtual Environment
+
+```bash
+python -m venv .venv
+```
+
+Activate Environment
+
+### Windows
+
+```bash
+.venv\Scripts\activate
+```
+
+### Linux / macOS
+
+```bash
+source .venv/bin/activate
+```
+
+---
+
+## 3. Install Dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
+---
+
+# ▶️ Run Backend
+
 ```bash
 uvicorn main:app --reload
 ```
 
-## Run Frontend
+Backend runs at
+
+```
+http://127.0.0.1:8000
+```
+
+Swagger Documentation
+
+```
+http://127.0.0.1:8000/docs
+```
+
+---
+
+# ▶️ Run Frontend
+
 ```bash
 streamlit run app.py
 ```
 
-## API Documentation
-http://127.0.0.1:8000/docs
+Frontend runs at
+
+```
+http://localhost:8501
+```
+
+---
+
+# 🧪 Running Tests
+
+```bash
+pytest
+```
+
+Example Output
+
+```
+==================== 5 passed ====================
+```
+
+---
+
+# 📷 Application Screenshots
+
+## 🏠 Home Page
+
+![Home Page](images/home.png)
+
+---
+
+## 📖 Swagger API Documentation
+
+![Swagger](images/swagger.png)
+
+---
+
+## 🧠 AI Networking Suggestions
+
+![Suggestions](images/suggestions.png)
+
+---
+
+## 💻 Source Code
+
+![Source Code](images/code.png)
+
+# 🌟 Future Enhancements
+
+- 🤖 Gemini API Integration
+- 🔐 User Authentication
+- ☁️ Cloud Deployment (Google Cloud)
+- 🗄️ MongoDB/PostgreSQL Database
+- 📊 Networking Analytics Dashboard
+- 📧 Email Follow-up Generator
+- 🌐 LinkedIn Integration
+- 🎤 Voice-based Networking Assistant
+
+---
+
+# 👩‍💻 Author
+
+**Project:** Personalized Networking Assistant
+
+**Course:** Google Cloud Generative AI Internship
+
+**Institution:** Annamacharya Institute of Technology and Sciences (AITS), Kadapa
+
+**Name:** Akshaya Peteti
+
+**Department:** B.Tech CSE (AI & ML)
+
+**GitHub:** https://github.com/akshayapeteti
+
+---
+
+# 📜 License
+
+This project was developed as part of the **Google Cloud Generative AI Internship** for educational purposes.
